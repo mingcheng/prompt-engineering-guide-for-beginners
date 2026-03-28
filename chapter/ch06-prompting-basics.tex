@@ -1,8 +1,16 @@
+%!%
+% Copyright (c) 2026 mingcheng <mingcheng@outlook.com>
+% 
+% File: ch06-prompting-basics.tex
+% Author: mingcheng <mingcheng@outlook.com>
+% File Created: 2026-03-27 15:50:02
+% 
+% Modified By: mingcheng <mingcheng@outlook.com>
+% Last Modified: 2026-03-29 07:50:18
+%%
+
 % !TeX root = ../prompt-engineering-guide-for-beginners.tex
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 第六章：提示工程入门篇
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{提示工程入门：最常用的四把钥匙}
 \label{ch:prompting-basics}
 
@@ -161,4 +169,10 @@ AI 会这样回答：
 你现在是一位在华尔街工作多年的对冲基金经理（角色扮演），请一步一步分析以下几组备选方案的潜在风险（链式思考）。
 \end{promptbox}
 
-掌握了这四种基础技巧，你已经可以应对 90\% 以上的日常办公、文本处理和信息获取场景了。如果你还想让 AI 处理更复杂的任务，比如需要极高准确性的推理、多步骤协作等，下一章会介绍几种更进阶的增强技巧。
+掌握了这四种基础技巧，你已经可以应对 90\% 以上的日常办公、文本处理和信息获取场景了。
+
+\begin{tipbox}
+快速选择指南：如果任务简单直接，先试零样本；如果 AI 理解不到位，加几个示例走少样本；如果需要严密推理，加上「请一步一步思考」开启链式思考；如果想要特定风格或专业视角，给 AI 分配一个角色。这四把钥匙可以单独使用，也可以自由组合。
+\end{tipbox}
+
+如果你还想让 AI 处理更复杂的任务，比如需要极高准确性的推理、多步骤协作等，下一章会介绍几种更进阶的增强技巧。

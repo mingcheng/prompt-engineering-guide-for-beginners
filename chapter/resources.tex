@@ -1,8 +1,16 @@
+%!%
+% Copyright (c) 2026 mingcheng <mingcheng@outlook.com>
+% 
+% File: resources.tex
+% Author: mingcheng <mingcheng@outlook.com>
+% File Created: 2026-03-29 00:58:27
+% 
+% Modified By: mingcheng <mingcheng@outlook.com>
+% Last Modified: 2026-03-29 07:14:56
+%%
+
 % !TeX root = ../prompt-engineering-guide-for-beginners.tex
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 第十四章：工具与资源
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{工具与资源}
 \label{ch:resources}
 
@@ -107,6 +115,13 @@
   智能体 / Agent & 能自主执行多步骤任务的 AI 系统 \\
   多模态 / Multimodal & 同时处理文字、图片、语音等多种信息 \\
   推理模型 / Reasoning Model & 回答前先进行内部深度推理的模型（如 o1、DeepSeek R1） \\
+  知识截止日期 / Knowledge Cutoff & 模型训练数据的时间边界，超出此日期的信息模型不知道 \\
+  用户提示词 / User Prompt & 你在对话框中输入的每一条消息 \\
+  思维树 / Tree of Thoughts (ToT) & 让模型探索多条推理路径并回溯选择最优解 \\
+  提示链 / Prompt Chaining & 将复杂任务拆成多个步骤，前一步输出作为后一步输入 \\
+  自我一致性 / Self-Consistency & 让模型多次回答同一问题，取多数一致的结果 \\
+  元提示 / Meta-Prompting & 用一个总调度提示管理和协调多个子任务 \\
+  ReAct & 结合推理（Reasoning）和行动（Acting）的交替循环框架 \\
   \bottomrule
 \end{tabular}
 \end{center}

@@ -1,8 +1,16 @@
+%!%
+% Copyright (c) 2026 mingcheng <mingcheng@outlook.com>
+% 
+% File: ch10-multimodal.tex
+% Author: mingcheng <mingcheng@outlook.com>
+% File Created: 2026-03-27 15:50:02
+% 
+% Modified By: mingcheng <mingcheng@outlook.com>
+% Last Modified: 2026-03-29 07:50:42
+%%
+
 % !TeX root = ../prompt-engineering-guide-for-beginners.tex
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 第十章：多模态提示
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{多模态交互：不只是打字聊天}
 \label{ch:multimodal}
 
@@ -35,7 +43,7 @@
 
 \section{喂文档：让 AI 闪电阅读你的文件}
 
-许多优秀的 AI 工具现在已原生支持直接上传外部文件（包括 PDF、Word、Excel、PPT 乃至长篇代码文件等），并可直接让 AI 阅读、交叉比对和总结回答其中的问题。这比你自己吭哧吭哧开文档去复制粘贴要优雅无数倍。
+许多优秀的 AI 工具现在已原生支持直接上传外部文件（包括 PDF、Word、Excel、PPT 乃至长篇代码文件等），并可直接让 AI 阅读、交叉比对和总结回答其中的问题。这比你自己吭哧吭哧开文档去复制粘贴要优雅无数倍。如果你读过第~\ref{ch:prompting-intermediate}~章关于 RAG（检索增强生成，参见第~\ref{sec:rag}~节）的内容，就会发现这里的「喂文档」其实就是最直观的 RAG 实践：把权威资料直接塞进上下文，让 AI 基于你提供的素材来回答，而不是凭空编造。
 
 常见的文档处理神仙级应用场景：
 
@@ -120,3 +128,5 @@
 \end{itemize}
 
 多模态能力是 AI 发展最快的方向之一。现在还做不到的事情，过几个月可能就能做了。保持对新功能的关注，适时尝试，你会发现越来越多意想不到的用法。
+
+当然，无论你用的是纯文字对话还是多模态交互，使用过程中难免会遇到各种「翻车」场景。下一章我们就来聊聊最常见的问题和对应的急救方案。
