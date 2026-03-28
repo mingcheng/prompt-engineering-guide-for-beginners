@@ -1,23 +1,23 @@
---[==========================================[--
-   L3BUILD FILE FOR INSTALL-LATEX-GUIDE-ZH-CN
+--[==============================================[--
+   L3BUILD FILE FOR PROMPT-ENGINEERING-GUIDE
      Check PDF File & Directory After Build
---]==========================================]--
+--]==============================================]--
 
 --[==========================================[--
                 Basic Information
              Do Check Before Upload
 --]==========================================]--
-module           = "install-latex-guide-zh-cn"
-version          = "2026.3.3"
-maintainer       = "Ran Wang"
+module           = "prompt-engineering-guide-for-beginners"
+version          = "2026.3.29"
+maintainer       = "mingcheng"
 uploader         = maintainer
-maintainid       = "OsbertWang"
-email            = "ranwang.osbert@outlook.com"
+maintainid       = "mingcheng"
+email            = "mingcheng@outlook.com"
 repository       = "https://github.com/" .. maintainid .. "/" .. module
-announcement     = "Update for TeX Live 2026"
+announcement     = "Initial release"
 note             = ""
-summary          = "A short introduction to LaTeX installation written in Chinese"
-description      = [[This package will introduce the operations related to installing TeX Live (introducing MacTeX in macOS), upgrading packages, and compiling simple documents on Windows 11, Ubuntu 24.04, and macOS systems, and mainly introducing command line operations.]]
+summary          = "A beginner-friendly prompt engineering guide written in Chinese"
+description      = [[A fully open-source prompt engineering booklet for beginners who want to integrate large language models (LLMs) into their work and daily life. Covers basic concepts, prompt techniques, multimodal prompting, safety and ethics, and practical workflows.]]
 
 --[==========================================[--
          Build, Pack and Upload To CTAN
@@ -50,7 +50,7 @@ uploadconfig = {
   bugtracker   = repository .. "/issues",
   repository   = repository,
   development  = "https://github.com/" .. maintainid,
-  update       = true
+  update       = false
 }
 
 function docinit_hook()

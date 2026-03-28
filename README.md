@@ -20,4 +20,4 @@ make clean
 
 ## 📜 许可证 (License)
 
-本项目开源并遵循 [Apache-2.0 License](LICENSE)。你可以自由分发、演绎或作为内训教材，如果它帮助到了你，请不要吝啬右上角的 Star。🌟
+本项目开源并遵循 [The LaTeX Project Public License v1.3c](LICENSE)。你可以自由分发、演绎或作为内训教材，如果它帮助到了你，请不要吝啬右上角的 Star。🌟
