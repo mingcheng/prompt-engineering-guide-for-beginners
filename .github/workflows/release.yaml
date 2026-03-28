@@ -1,0 +1,37 @@
+name: Build and Release PDF
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v4
+        with:
+          package_file: .github/tl_packages
+
+      - name: Build PDF
+        run: make
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y%m%d')" >> "$GITHUB_OUTPUT"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: release-${{ steps.date.outputs.date }}-${{ github.run_number }}
+          name: "Build ${{ steps.date.outputs.date }}"
+          body: |
+            Automated build by GitHub Actions, based on commit ${{ github.sha }}.
+          files: prompt-engineering-guide-for-beginners.pdf

@@ -4,14 +4,20 @@ l3build
 # Base
 latex
 latex-bin
+xetex
 #
 # For the doc target
 adjustbox
 booktabs
+collectbox
 ctex
+environ
+etoolbox
+fandol
 fancyqr
 fancyvrb
 fontawesome7
+fontspec
 geometry
 hologo
 hyperref
@@ -20,7 +26,13 @@ latexmk
 libertine
 listings
 menukeys
+pdfcol
+pgf
 pict2e
 qrcode
 relsize
+tcolorbox
+tikzfill
+tools
+xcolor
 xstring

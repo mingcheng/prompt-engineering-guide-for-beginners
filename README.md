@@ -1,6 +1,6 @@
-# 和 AI 好好说话：零基础提示工程指南 (Prompt Engineering Guide for Beginners)
+# 和 AI 好好说话：零基础提示工程指南
 
-这是一本完全开源的《提示工程（Prompt Engineering）》小册子，专为希望将大语言模型（LLM）彻底融入办公与生活流的读者编写。
+这是一本完全开源的提示工程（Prompt Engineering）小册子，专为希望将大语言模型（LLM）彻底融入办公与生活流的零基础读者编写。
 
 ## 🛠️ 本地编译 PDF (How to Compile)
 
