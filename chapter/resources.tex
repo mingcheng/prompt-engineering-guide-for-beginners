@@ -1,0 +1,205 @@
+% !TeX root = ../prompt-engineering-guide-for-beginners.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第十四章：工具与资源
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{工具与资源}
+\label{ch:resources}
+
+这一章汇集了各种实用的工具、资源和速查表，方便你在需要的时候快速查阅。
+
+\section{主流 AI 工具对比表}
+
+\begin{center}
+\begin{tabular}{p{2.2cm}p{2.5cm}p{2.8cm}p{2cm}p{3cm}}
+  \toprule
+  \textbf{工具} & \textbf{开发商} & \textbf{特点} & \textbf{免费额度} & \textbf{适用场景} \\
+  \midrule
+  ChatGPT & OpenAI & 功能全面，生态丰富 & 有（GPT-4o mini） & 通用，各类任务 \\
+  Claude & Anthropic & 长文本处理能力强 & 有 & 写作、分析、编程 \\
+  Gemini & Google & 深度整合谷歌生态 & 有 & 搜索、办公、多模态 \\
+  Kimi & 月之暗面 & 超长文本，中文友好 & 有 & 中文场景，文档分析 \\
+  DeepSeek & DeepSeek & 开源，推理能力强 & 有 & 推理、代码、通用 \\
+  智谱 GLM & 智谱 AI & 清华系，API 丰富 & 有 & 开发集成 \\
+  文心一言 & 百度 & 中文理解能力好 & 有 & 中文内容创作 \\
+  通义千问 & 阿里 & 支持多模态 & 有 & 企业应用，代码 \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\textit{说明：以上信息可能会随产品迭代而变化，请以各平台官网的最新信息为准。}
+
+\section{提示词资源网站}
+
+\begin{itemize}
+  \item \textbf{Prompt Engineering Guide}（\url{https://www.promptingguide.ai/zh}）：系统全面的提示工程教程，支持中文，内容持续更新
+  \item \textbf{FlowGPT}（\url{https://flowgpt.com}）：社区驱动的提示词分享平台，可以直接使用或收藏他人分享的提示词
+  \item \textbf{PromptBase}（\url{https://promptbase.com}）：提示词交易平台，可以买卖高质量的提示词模板
+  \item \textbf{Awesome ChatGPT Prompts}（GitHub）：开源的提示词集合，包含大量经过测试的角色扮演和任务型提示词
+  \item \textbf{Learn Prompting}（\url{https://learnprompting.org}）：免费的提示工程在线课程，从入门到高级，有中文版
+\end{itemize}
+
+\chapter{常用高频提示词词汇表}
+\label{ch:common-prompts}
+
+在写提示词时，以下词汇可以帮助你更精确地表达需求：
+
+\section{任务类动词}
+\begin{center}
+\begin{tabular}{llll}
+  \toprule
+  \textbf{中文} & \textbf{英文} & \textbf{中文} & \textbf{英文} \\
+  \midrule
+  总结 & Summarize & 分析 & Analyze \\
+  解释 & Explain & 改写 & Rewrite \\
+  翻译 & Translate & 比较 & Compare \\
+  分类 & Classify & 提取 & Extract \\
+  列举 & List & 评估 & Evaluate \\
+  扩展 & Expand & 简化 & Simplify \\
+  纠正 & Correct & 优化 & Optimize \\
+  模拟 & Simulate & 预测 & Predict \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\section{格式与风格描述词}
+\begin{center}
+\begin{tabular}{llll}
+  \toprule
+  \textbf{中文} & \textbf{英文} & \textbf{中文} & \textbf{英文} \\
+  \midrule
+  正式的 & Formal & 口语化的 & Conversational \\
+  专业的 & Professional & 通俗易懂的 & Simple / Plain \\
+  幽默的 & Humorous & 严肃的 & Serious \\
+  简洁的 & Concise & 详细的 & Detailed \\
+  客观的 & Objective & 有说服力的 & Persuasive \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\section{输出格式关键词}
+\begin{center}
+\begin{tabular}{llll}
+  \toprule
+  \textbf{中文} & \textbf{英文} & \textbf{中文} & \textbf{英文} \\
+  \midrule
+  表格 & Table & 编号列表 & Numbered List \\
+  要点列表 & Bullet Points & 思维导图 & Mind Map \\
+  JSON 格式 & JSON Format & Markdown & Markdown \\
+  分步骤 & Step by Step & 对比表 & Comparison Table \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\chapter{提示工程术语表（中英对照）}
+\label{ch:glossary}
+
+\begin{center}
+\begin{tabular}{p{4.5cm}p{8cm}}
+  \toprule
+  \textbf{术语} & \textbf{说明} \\
+  \midrule
+  提示词 / Prompt & 你输入给 AI 的指令或问题 \\
+  提示工程 / Prompt Engineering & 设计和优化提示词的方法论 \\
+  大语言模型 / LLM & Large Language Model 的缩写，AI 的核心技术 \\
+  Token / 令牌 & 模型处理文本的基本单位 \\
+  上下文窗口 / Context Window & 模型一次能处理的文本总量上限 \\
+  Temperature / 温度 & 控制输出随机性的参数 \\
+  幻觉 / Hallucination & AI 编造虚假信息的现象 \\
+  零样本 / Zero-Shot & 不给示例，直接下指令 \\
+  少样本 / Few-Shot & 通过提供几个示例来引导 AI \\
+  链式思考 / Chain-of-Thought & 让 AI 展示推理过程 \\
+  系统提示词 / System Prompt & 为整个对话设定规则的隐藏指令 \\
+  RAG / 检索增强生成 & 先检索相关内容，再基于内容生成回答 \\
+  微调 / Fine-Tuning & 用特定数据进一步训练模型 \\
+  智能体 / Agent & 能自主执行多步骤任务的 AI 系统 \\
+  多模态 / Multimodal & 同时处理文字、图片、语音等多种信息 \\
+  推理模型 / Reasoning Model & 回答前先进行内部深度推理的模型（如 o1、DeepSeek R1） \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\chapter{延伸阅读}
+\label{ch:extended-reading}
+
+如果你想进一步深入学习，以下是一些推荐的资源：
+
+\section{在线课程}
+
+\begin{itemize}
+  \item \textbf{ChatGPT Prompt Engineering for Developers}（DeepLearning.AI）：由 Andrew Ng 和 OpenAI 联合推出的免费短课程，非常适合入门
+  \item \textbf{Prompt Engineering for ChatGPT}（Coursera）：Vanderbilt University 提供的系统课程
+\end{itemize}
+
+\section{参考论文}
+
+\begin{itemize}
+  \item \textit{Chain-of-Thought Prompting Elicits Reasoning in Large Language Models}（Wei et al., 2022）
+  \item \textit{Tree of Thoughts: Deliberate Problem Solving with Large Language Models}（Yao et al., 2023）
+  \item \textit{ReAct: Synergizing Reasoning and Acting in Language Models}（Yao et al., 2022）
+\end{itemize}
+
+\section{社区}
+
+\begin{itemize}
+  \item Reddit: r/PromptEngineering、r/ChatGPT
+  \item GitHub 上各种 Awesome 系列的提示词仓库
+  \item 各大 AI 工具的官方社区和论坛
+\end{itemize}
+
+\chapter{常见问题 FAQ}
+\label{ch:faq}
+
+\section*{Q1：我应该选哪个 AI 工具？}
+没有绝对的好坏，取决于你的需求。建议先免费试用几个，看哪个最顺手。中文用户可以优先试试 Kimi 或 DeepSeek，英文场景可以先试 ChatGPT 或 Claude。
+
+\section*{Q2：免费版和付费版差别大吗？}
+免费版足够日常学习和轻度使用。付费版通常提供更强的模型、更大的上下文窗口、更快的响应速度和更多的高级功能。如果你每天高频使用，付费版的体验提升很明显。
+
+\section*{Q3：英文提示词是不是比中文效果好？}
+在早期确实如此，因为模型的训练数据中英文占比更大。但现在主流模型的中文能力已经很强了，日常使用中文和英文的差距越来越小。用你更擅长的语言写提示词就好。
+
+\section*{Q4：提示词有最佳长度吗？}
+没有固定的最佳长度。简单的任务用一两句话就够了，复杂的任务可能需要几百字的详细说明。原则是：\textbf{说清楚就好，不要为了写长而写长，也不要为了简短而省略关键信息}。
+
+\section*{Q5：AI 会取代我的工作吗？}
+AI 更可能改变你的工作方式，而不是取代你。就像电脑和互联网的出现一样，它会淘汰一些岗位，但也会创造新的岗位。学会使用 AI 的人，会比不会使用的人更有竞争力。
+
+\section*{Q6：我不懂技术，能学会提示工程吗？}
+当然可以。提示工程的核心就是「把你的需求说清楚」，这是一项沟通能力，不需要任何硬核的代码技术背景。你已经读到了这本小册子的最后一章，说明你已经在路上了。
+
+即便未来底层模型智能进一步提升，所谓的“自然语言编程”依旧是人类利用系统级思维与机器对话的桥梁。不管前端界面怎么变，逻辑拆解与约束能力永远是无法被替代的核心资产。
+
+\section*{Q7：AI 的回答我能直接用吗？}
+建议把 AI 的回答当作「初稿」而非「终稿」。在使用之前，花几分钟检查事实准确性、调整语气和细节，确保内容真正符合你的需求。
+
+\section*{Q8：提示词有「标准答案」吗？}
+没有。同一个需求可以有很多种写法，不同的模型对同一个提示词的反应也可能不同。找到适合你的场景和模型的写法，就是好的提示词。
+
+\section*{Q9：把 AI 用好需要多长时间？}
+基础技巧一两天就能上手。但真正熟练地使用 AI 来提高工作效率，需要在实际工作中不断练习和积累。保持好奇心，多尝试，你会越用越顺手。
+
+\section*{Q10：AI 技术变化这么快，我学的东西会不会很快过时？}
+模型和工具会不断更新，但提示工程的核心原则（说清楚需求、提供上下文、给出约束条件等）是不变的。掌握了这些原则，不管工具怎么变，你都能快速适应。
+
+\begin{tipbox}
+如果你有任何其他问题，或者想分享你的使用经验，可以在 GitHub 仓库提交 Issue。我会定期更新 FAQ 来解答大家的疑问。
+\end{tipbox}
+
+\chapter{更新记录}
+\label{ch:changelog}
+
+本小册子会随着 AI 技术的发展持续更新。以下是主要的版本变更记录：
+
+\begin{center}
+\begin{tabular}{p{2.5cm}p{2cm}p{8cm}}
+  \toprule
+  \textbf{日期} & \textbf{版本} & \textbf{更新内容} \\
+  \midrule
+  2026 年 3 月 & v1.1 & 优化内容和排版 \\
+  2026 年 2 月 & v1.0 & 初版发布，包含完整内容 \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+这本小册子是开源的，欢迎大家参与更新和完善。如果你有任何建议或想贡献内容，可以在 GitHub 仓库提交 Pull Request。

@@ -1,0 +1,219 @@
+\documentclass[fontset = fandol, svgnames]{ctexrep}
+
+\ctexset{
+  chapter        = {
+    format       = \huge\bfseries\raggedright,
+    number       = \arabic{chapter},
+    name         = {},
+    tocline      = \CTEXifname{\protect\numberline{\thechapter}}{}#2,
+  },
+  section/format = \Large\bfseries\raggedright,
+}
+
+\usepackage[a4paper, margin = 2.4cm]{geometry}
+\usepackage{booktabs, array}
+\usepackage{fontawesome7, fancyqr, hologo}
+\usepackage[colorlinks,
+  linkcolor  = blue,
+  citecolor  = blue,
+  urlcolor   = blue,
+  pdfpagelayout = SinglePage,
+  bookmarksnumbered]{hyperref}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\tikzset{
+  score stars/.style = {
+    % shape
+    star, star points = 5, star point ratio = 2.25, scale = .8,
+    % color 
+    draw = gray, fill = #1,
+    % others
+    inner sep = 0.14em, anchor = outer point 3
+  }
+}
+\newcommand\stars[1]{%
+  \begin{tikzpicture}
+    % Draw five stars. For #1 = "2.3", fill the 1st and 2nd stars as gray,
+    % and fill the 3rd to 5th stars as white.
+    \foreach \i in {1, ..., 5} {
+      \pgfmathsetmacro\starcolor{\i<=#1 ? "gray" : "white"}
+      \node [score stars = \starcolor] (star\i) at (\i*0.8em, 0) {};
+    }
+    % For #1 = "2.3", let \partstar = "3" and \starpart = "0.3".
+    % Then fill the left 30% part of the 3rd star as gray after clipping.
+    \pgfmathsetmacro\partstar{#1>int(#1) ? int(#1+1) : 0}
+    \ifnum\partstar>0
+      \pgfmathsetmacro\starpart{#1-(int(#1))}
+      \coordinate (upper left)
+        at (star\partstar.outer point 2 |- star\partstar.outer point 1);
+      \coordinate (upper right)
+        at (star\partstar.outer point 5 |- star\partstar.outer point 1);
+      \coordinate (lower right)
+        at (star\partstar.outer point 5 |- star\partstar.outer point 4);
+      \clip (upper left) rectangle
+            ({$ (upper left)!\starpart!(upper right) $} |- lower right);
+      \node [score stars = gray] at (\partstar*0.8em, 0) {};
+    \fi
+  \end{tikzpicture}%
+}
+\newdimen\ttwd \newbox \xttwdbox
+\setbox\xttwdbox\hbox{\normalsize\ttfamily x}
+\ttwd=\wd\xttwdbox
+
+\usepackage[os = win]{menukeys}
+\renewmenumacro{\menu}[>]{angularmenus}
+\renewmenumacro{\keys}[+]{shadowedroundedkeys}
+\renewcommand\RSsmallest{5pt}
+\protect\renewcommand\faWindows{%
+  \tikz[rounded corners = .1pt, baseline = -.25em]
+    \foreach \i in {0, 90, 180, 270}
+      \fill [ rotate = \i ] (-.4em, .4em) rectangle (-.025em, .025em);
+}
+
+\usepackage{listings, fancyvrb}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable, skins}
+
+% 提示词代码块样式（用户输入的提示词）
+\newtcolorbox{promptbox}{%
+  enhanced,
+  breakable,
+  colback    = blue!3!white,
+  colframe   = blue!45!black,
+  leftrule   = 0.4pt,
+  rightrule  = 0.4pt,
+  toprule    = 0.4pt,
+  bottomrule = 0.4pt,
+  arc        = 0pt,
+  left       = 10pt,
+  right      = 10pt,
+  top        = 8pt,
+  bottom     = 8pt,
+  fontupper  = \small,
+  before upper = {\setlength{\parskip}{0.6em}\setlength{\parindent}{0pt}},
+}
+
+% AI 回答样式
+\newtcolorbox{aibox}{%
+  enhanced,
+  breakable,
+  colback    = green!3!white,
+  colframe   = green!40!black,
+  leftrule   = 0.4pt,
+  rightrule  = 0.4pt,
+  toprule    = 0.4pt,
+  bottomrule = 0.4pt,
+  arc        = 0pt,
+  left       = 10pt,
+  right      = 10pt,
+  top        = 8pt,
+  bottom     = 8pt,
+  fontupper  = \small,
+  before upper = {\setlength{\parskip}{0.6em}\setlength{\parindent}{0pt}},
+}
+
+% 小贴士样式
+\newtcolorbox{tipbox}{%
+  enhanced,
+  breakable,
+  colback    = orange!3!white,
+  colframe   = orange!50!black,
+  leftrule   = 0.4pt,
+  rightrule  = 0.4pt,
+  toprule    = 0.4pt,
+  bottomrule = 0.4pt,
+  arc        = 0pt,
+  left       = 10pt,
+  right      = 10pt,
+  top        = 8pt,
+  bottom     = 8pt,
+  fontupper  = \small,
+  before upper = {\setlength{\parskip}{0.6em}\setlength{\parindent}{0pt}},
+}
+
+\lstset{
+  breaklines      = true,
+  columns         = fullflexible,
+  showstringspaces= false,
+  tabsize         = 4,
+  gobble          = 1,
+  numbers         = left,
+  numberstyle     = \tiny\ttfamily,
+  numbersep       = \ccwd,
+  frame           = lines,
+  rulecolor       = \color{blue!40},
+  backgroundcolor = \color{lightgray!20},
+  language        = bash,
+  alsoletter      = -,
+  basicstyle      = \small\ttfamily,
+  commentstyle    = \color{olive!80!black},
+  stringstyle     = \color{brown},
+  emph            = { bash, cd, cp, dpkg, find, grep, ln, md5sum, mkdir,
+                      mount, rm, rmdir, set, sha512sum, sudo, umount },
+  emphstyle       = \color{blue}\bfseries,
+  morekeywords    = { add-apt-repository, apt, brew, certutil, evince,
+                      fc-cache, fc-list, fmtutil, fmtutil-user, fmtutil-sys,
+                      gedit, kpsewhich, l3build, latexmk, mkfontdir,
+                      mkfontscale, notepad, tex, texdoc, tlmgr, pdflatex,
+                      visudo, wget, wsl, xelatex },
+  keywordstyle    = \color{teal}\bfseries
+}
+\lstdefinelanguage{json}{
+  basicstyle   = \small\ttfamily\color{DarkBlue},
+  numberstyle  = \tiny\ttfamily\color{black},
+  alsoletter   = ",
+  morecomment  = [l]{//},
+  morekeywords = {"latexmk", "latexmkpdf", "latexmkxe", "never", "tab", "external"},
+  keywordstyle = \color{FireBrick}\bfseries,
+  literate     ={*[{\textcolor{DarkGreen}{[ }}1  ]{\textcolor{DarkGreen}{ ]}}1
+                 \{{\textcolor{DarkRed}  {\{}}1 \}{\textcolor{DarkRed}  {\}}}1
+                  :{\textcolor{black}    {:}} 1  ,{\textcolor{black}    {,}} 1}
+}
+\lstdefinelanguage{mwe}{
+  language     = {[LaTeX]TeX},
+  texcsstyle   = *\color{violet},
+  morekeywords = {article, ctexart, document},
+  literate     =*\{{\textcolor{magenta}\{}1 \}{\textcolor{magenta}\}}1
+}
+\lstMakeShortInline [ breaklines = true, basicstyle = \ttfamily,
+                      emphstyle = {}, keywordstyle = {} ] {"}
+\VerbatimFootnotes
+
+\title{\bfseries 和AI好好说话：零基础提示工程指南%
+  \thanks{\url{https://github.com/mingcheng/prompt-engineering-guide-for-beginners}}%
+}
+\author{吕峰军（明城）%
+  \thanks{\href{mailto:mingcheng@outlook.com}%
+    {\texttt{mingcheng@outlook.com}}}%
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\include{./chapter/preface}
+
+\tableofcontents
+
+\include{./chapter/ch01-icebreaker}
+\include{./chapter/ch02-first-try}
+\include{./chapter/ch03-basic-concepts}
+\include{./chapter/ch04-prompt-elements}
+\include{./chapter/ch05-general-tips}
+\include{./chapter/ch06-prompting-basics}
+\include{./chapter/ch07-prompting-intermediate}
+\include{./chapter/ch08-prompting-advanced}
+\include{./chapter/ch09-prompt-examples}
+\include{./chapter/ch10-multimodal}
+\include{./chapter/ch11-troubleshooting}
+\include{./chapter/ch12-safety-ethics}
+\include{./chapter/ch13-workflow}
+\include{./chapter/conclusion}
+
+\appendix
+
+\include{./chapter/resources}
+
+\end{document}
