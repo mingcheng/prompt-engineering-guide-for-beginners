@@ -1,0 +1,171 @@
+{
+  "editor.fontSize": 13,
+  "editor.lineHeight": 22,
+  "terminal.integrated.defaultProfile.osx": "fish shell",
+  "terminal.integrated.env.osx": {
+    "SHELL": "/opt/homebrew/bin/fish"
+  },
+  "[latex]": {
+    "editor.tabSize": 2,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Maple Mono NF CN",
+    "editor.lineNumbers": "on",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wrappingStrategy": "advanced",
+    "editor.wordWrapColumn": 80,
+    "editor.unicodeHighlight.ambiguousCharacters": false
+  },
+  "psi-header.lang-config": [
+    {
+      "language": "latex",
+      "begin": "%!%",
+      "prefix": "% ",
+      "suffix": "",
+      "end": "%%"
+    },
+    {
+      "language": "bibtex",
+      "mapTo": "latex"
+    }
+  ],
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.autoClean.run": "onSucceeded",
+  "latex-workshop.texcount.autorun": "never",
+  "latex-workshop.latex.outDir": "./build",
+  "latex-workshop.formatting.latex": "latexindent",
+  "latex-workshop.latex.clean.subfolder.enabled": true,
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+    "*.snm",
+    "*.synctex(busy)",
+    "*.synctex.gz(busy)",
+    "*.nav",
+    "*.vrb",
+    "*.xdv",
+    "*.run.xml",
+    "*.bcf"
+  ],
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk",
+      "tools": [
+        "latexmk"
+      ]
+    },
+    {
+      "name": "xelatex",
+      "tools": [
+        "xelatex"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-xelatex",
+        "-f",
+        "-synctex=1",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-outdir=./build",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-output-directory=./build",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": [
+        "--output-directory=./build",
+        "%DOCFILE%"
+      ],
+      "env": {}
+    }
+  ],
+  "latex-workshop.latex.watch.files.ignore": [
+    "**/thuthesis.cls",
+    "**/*.bbx",
+    "**/*.bbl",
+    "**/*.cbx",
+    "**/*.cfg",
+    "**/*.clo",
+    "**/*.cnf",
+    "**/*.def",
+    "**/*.dfu",
+    "**/*.enc",
+    "**/*.fd",
+    "**/*.fmt",
+    "**/*.lbx",
+    "**/*.map",
+    "**/*.mkii",
+    "**/*.pfb",
+    "**/*.tfm",
+    "**/*.vf",
+    "**/*.code.tex",
+    "**/*.sty",
+    "**/texmf-{dist,var}/**",
+    "**/Local/MiKTeX/**",
+    "**/Local/Programs/MiKTeX/**",
+    "**/Roaming/MiKTeX/**",
+    "**/Program*/MiKTeX*/**",
+    "**/.miktex/texmfs/**",
+    "/var/cache/miktex-texmf/**",
+    "/usr/local/share/miktex-texmf/**",
+    "**/Library/Application Support/MiKTeX/texmfs/**",
+    "/dev/null"
+  ],
+  "psi-header.config": {
+    "author": "mingcheng",
+    "authorEmail": "mingcheng@outlook.com",
+    "company": "mingcheng <mingcheng@outlook.com>"
+  },
+  "psi-header.templates": [
+    {
+      "language": "*",
+      "template": [
+        "Copyright (c) <<yeartoyear(fc, now)>> <<company>>",
+        "",
+        "File: <<filename>>",
+        "Author: <<author>> <<<authoremail>>>",
+        "File Created: <<filecreated('YYYY-MM-DD HH:mm:ss')>>",
+        "",
+        "Modified By: <<author>> <<<authoremail>>>",
+        "Last Modified: <<dateformat('YYYY-MM-DD HH:mm:ss')>>"
+      ]
+    }
+  ]
+}
