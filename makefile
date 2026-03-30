@@ -1,20 +1,23 @@
-INSTALLLATEX  = prompt-engineering-guide-for-beginners
-PDF       = $(INSTALLLATEX).pdf
-REQUIRE   = $(INSTALLLATEX).tex $(wildcard ./chapter/*.tex)
-TEMP      = $(INSTALLLATEX).xdv $(INSTALLLATEX).aux $(INSTALLLATEX).log $(INSTALLLATEX).toc $(INSTALLLATEX).out $(INSTALLLATEX).synctex.gz \
+JOBNAME   = prompt-engineering-guide-for-beginners
+PDF       = $(JOBNAME).pdf
+SOURCES   = $(JOBNAME).tex $(wildcard ./chapter/*.tex)
+TEMP      = $(JOBNAME).xdv $(JOBNAME).aux $(JOBNAME).log $(JOBNAME).toc $(JOBNAME).out $(JOBNAME).synctex.gz \
             $(wildcard ./chapter/*.aux)
 
 TEX       = xelatex
-MODE      = -synctex=1
-NOPDFMODE = -synctex=1 --no-pdf
+TEXFLAGS  = -synctex=1 -halt-on-error -interaction=nonstopmode
 
 all: $(PDF)
 
-$(PDF): $(REQUIRE)
-	$(TEX) $(NOPDFMODE) $(INSTALLLATEX)
-	$(TEX) $(MODE) $(INSTALLLATEX)
+$(PDF): $(SOURCES)
+	$(TEX) $(TEXFLAGS) --no-pdf $(JOBNAME)
+	$(TEX) $(TEXFLAGS) $(JOBNAME)
 
 clean:
-	rm $(PDF) $(TEMP)
+	rm -f $(PDF) $(TEMP)
 
-.PHONY: all clean
+count:
+	texcount -inc -total -chinese -utf8 $(JOBNAME).tex
+
+.PHONY: all clean count
+
